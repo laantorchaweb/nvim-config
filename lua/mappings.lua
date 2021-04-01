@@ -4,10 +4,13 @@ local cmd = vim.cmd
 local opt = {noremap = true, silent = true}
 
 api.nvim_set_keymap('n', '<Space>', '<NOP>', opt)
-g.mapleader = ','
+g.mapleader = ' '
 
 -- no hl
 api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', opt)
+
+-- q for quit
+api.nvim_set_keymap('n', '<Leader>q', ':q<CR>', opt)
 
 -- clean search (highlight)
 api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', {silent = true})
