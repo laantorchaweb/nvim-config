@@ -20,7 +20,7 @@ opt("w", "wrap", false) -- display long lines as just one line
 opt("o", "mouse", "a")
 
 opt("w", "signcolumn", "yes")
-opt("o", "cmdheight", 2)
+opt("o", "cmdheight", 1)
 opt("o", "pumheight", 10) -- makes popup menu smaller
 opt("o", "fileencoding", "utf-8") -- the encoding written to file
 
@@ -47,7 +47,6 @@ opt("o", "updatetime", 250) -- update interval for gitsigns
 opt("o", "clipboard", "unnamedplus")
 
 -- for indenline
-opt("b", "expandtab", true )
 opt("b", "shiftwidth", 2 )
 
 

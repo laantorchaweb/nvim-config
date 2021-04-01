@@ -16,7 +16,7 @@ require('telescope').setup {
         layout_strategy = "horizontal",
         layout_defaults = {horizontal = {mirror = false}, vertical = {mirror = false}},
         file_sorter = require'telescope.sorters'.get_fuzzy_file,
-        file_ignore_patterns = {},
+        file_ignore_patterns = { "node_modules/.*", "%-lock.json" },
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
         shorten_path = true,
         winblend = 0,
@@ -65,7 +65,6 @@ require('telescope').setup {
     extensions = {
         media_files = {
             -- filetypes whitelist
-            -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
             filetypes = {"png", "webp", "jpg", "jpeg"},
             find_cmd = "rg" -- find command (defaults to `fd`)
         }

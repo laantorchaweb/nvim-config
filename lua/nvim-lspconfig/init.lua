@@ -13,13 +13,16 @@ end
 lsp.html.setup{}
 lsp.css.setup{}
 lsp.efm.setup{
+  on_attach = on_attach,
   filetypes = {"lua", "python", "javascriptreact", "javascript", "sh", "html", "css", "json", "yaml", "markdown"},
 }
 
 lsp.flow.setup{
+  on_attach = on_attach,
   filetypes = { "javascript", "javascriptreact" },
 }
 
 lsp.typescript.setup{
+  on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 }

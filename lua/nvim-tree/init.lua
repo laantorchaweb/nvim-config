@@ -23,18 +23,20 @@ vim.g.nvim_tree_show_icons = {
 }
 
 vim.g.nvim_tree_icons = {
-    default = " ",
-    symlink = " ",
+    default = '',
+    symlink = '',
     git = {
-        unstaged = "✗",
+        unstaged = "",
         staged = "✓",
         unmerged = "",
         renamed = "➜",
-        untracked = "★"
+        untracked = ""
     },
     folder = {
-        default = "",
-        open = "",
+        default = "",
+        open = "",
+        empty = "",
+        empty_open = "",
         symlink = ""
     }
 }

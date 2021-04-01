@@ -17,6 +17,14 @@ cmd('set colorcolumn=99999') -- fix indentline for now
 cmd('let g:nvcode_termcolors=256')
 cmd('colorscheme ' .. O.colorscheme)
 
+-- ignore
+--
+cmd('set wildignore+=*/tmp/*,*.o,*.so,*.swp,*.zip,*/node_modules/*')
+cmd('set wildignore+=*/node_modules/**')
+cmd('set wildignore+=*node_modules**')
+
+-- ALE
+
 cmd('highlight clear ALEErrorSign')
 cmd('highlight clear ALEWarningSign')
 
@@ -25,6 +33,7 @@ g.ale_sign_warning = "⚠️"
 g.ale_fix_on_save = 1
 g.ale_linters_explicit = 0
 g.ale_sign_column_always = 1
+g.ale_open_list = 0
 
 g.ale_fixers = {
    javascript = {'eslint', 'prettier'},
@@ -34,3 +43,14 @@ g.ale_fixers = {
 g.ale_linters = {
    javascript = { 'flow', 'eslint' }
 }
+
+-- better whitespace
+
+g.better_whitespace_guicolor = '#ff7b72'
+
+
+-- TMUX
+g.tmux_navigator_disable_when_zoomed = 1
+
+-- emmet
+g.user_emmet_leader_key='<C-Z>'

@@ -84,8 +84,8 @@ return require('packer').startup(function(use)
 
     -- Tmux
     use 'tmux-plugins/vim-tmux'
-    -- use 'christoomey/vim-tmux-navigator'
-    -- use 'tmux-plugins/vim-tmux-focus-events'
+    use 'christoomey/vim-tmux-navigator'
+    use 'tmux-plugins/vim-tmux-focus-events'
 
     -- ALE
     use 'dense-analysis/ale'
