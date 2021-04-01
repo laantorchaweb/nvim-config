@@ -1,6 +1,6 @@
 local ts_config = require("nvim-treesitter.configs")
 
-tsconfig.setup {
+ts_config.setup {
     ensure_installed = {
         "javascript",
         "html",

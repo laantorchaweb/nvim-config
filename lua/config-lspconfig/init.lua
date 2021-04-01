@@ -12,17 +12,30 @@ end
 
 lsp.html.setup{}
 lsp.css.setup{}
+lsp.ruby.setup{}
+
 lsp.efm.setup{
   on_attach = on_attach,
   filetypes = {"lua", "python", "javascriptreact", "javascript", "sh", "html", "css", "json", "yaml", "markdown"},
 }
 
+-- npm install -g flow
 lsp.flow.setup{
   on_attach = on_attach,
   filetypes = { "javascript", "javascriptreact" },
 }
 
+-- npm install -g typescript typescript-language-server
 lsp.typescript.setup{
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+}
+
+-- npm install -g vscode-css-languageserver-bin
+lsp.cssls.setup {
+    cmd = {
+        "node", DATA_PATH .. "/lspinstall/css/vscode-css/css-language-features/server/dist/node/cssServerMain.js",
+        "--stdio"
+    },
+    on_attach = on_attach
 }
