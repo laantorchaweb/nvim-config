@@ -9,15 +9,11 @@ g.mapleader = ' '
 -- no hl
 api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', opt)
 
--- q for quit
-api.nvim_set_keymap('n', '<Leader>q', ':q<CR>', opt)
-
 -- clean search (highlight)
 api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', {silent = true})
 
 -- edit init.lua
 api.nvim_set_keymap('n', '<Leader>vi', ':e ~/.config/nvim/init.lua<CR>', opt)
-
 
 -- Telescope
 cmd([[nnoremap <Leader>e <cmd>lua require('telescope.builtin').find_files()<cr>]])
