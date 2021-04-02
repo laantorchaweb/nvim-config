@@ -17,7 +17,7 @@ lsp.ruby.setup{}
 lsp.efm.setup{
   on_attach = on_attach,
   init_options = {documentFormatting = false, codeAction = false},
-  filetypes = {"lua", "python", "javascriptreact", "javascript", "sh", "html", "css", "json", "yaml", "markdown"},
+  filetypes = {"python", "javascriptreact", "javascript", "sh", "html", "css", "json", "yaml", "markdown"},
 }
 
 -- npm install -g flow
@@ -40,3 +40,16 @@ lsp.cssls.setup {
   },
   on_attach = on_attach
 }
+
+lsp.lua.setup{
+  on_attach = custom_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {"vim", "on_attach"},
+        disable = {"lowercase-global"}
+      }
+    }
+  }
+}
+

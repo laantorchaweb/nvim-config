@@ -28,13 +28,11 @@ O = {
         diagnostics = {virtual_text = true, signs = true, underline = true}
     },
     json = {
-        -- @usage can be 'prettier'
         formatter = 'prettier',
         autoformat = false,
         diagnostics = {virtual_text = true, signs = true, underline = true}
     },
     css = {formatter = 'prettier', autoformat = false, virtual_text = true},
-    json = {formatter = 'prettier', autoformat = false, virtual_text = true}
 }
 
 DATA_PATH = vim.fn.stdpath('data')
