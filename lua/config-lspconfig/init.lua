@@ -16,6 +16,7 @@ lsp.ruby.setup{}
 
 lsp.efm.setup{
   on_attach = on_attach,
+  init_options = {documentFormatting = false, codeAction = false},
   filetypes = {"lua", "python", "javascriptreact", "javascript", "sh", "html", "css", "json", "yaml", "markdown"},
 }
 
@@ -33,9 +34,9 @@ lsp.typescript.setup{
 
 -- npm install -g vscode-css-languageserver-bin
 lsp.cssls.setup {
-    cmd = {
-        "node", DATA_PATH .. "/lspinstall/css/vscode-css/css-language-features/server/dist/node/cssServerMain.js",
-        "--stdio"
-    },
-    on_attach = on_attach
+  cmd = {
+    "node", DATA_PATH .. "/lspinstall/css/vscode-css/css-language-features/server/dist/node/cssServerMain.js",
+    "--stdio"
+  },
+  on_attach = on_attach
 }

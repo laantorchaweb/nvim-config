@@ -7,6 +7,7 @@ cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
 
 cmd('set ts=2')
 cmd('set sw=2')
+cmd('set expandtab')
 
 -- colorscheme
 

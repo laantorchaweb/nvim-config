@@ -8,6 +8,8 @@ local function opt(scope, key, value)
 end
 
 opt("o", "hidden", true)
+opt("o", "incsearch", true)
+opt("o", "smartcase", true)
 opt("o", "ignorecase", true)
 opt("o", "splitbelow", true)
 opt("o", "splitright", true)
@@ -20,7 +22,7 @@ opt("w", "wrap", false) -- display long lines as just one line
 opt("o", "mouse", "a")
 
 opt("w", "signcolumn", "yes")
-opt("o", "cmdheight", 1)
+opt("o", "cmdheight", O.cmdheight)
 opt("o", "pumheight", 10) -- makes popup menu smaller
 opt("o", "fileencoding", "utf-8") -- the encoding written to file
 

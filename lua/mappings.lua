@@ -21,6 +21,9 @@ cmd([[nnoremap <Leader>a <cmd>lua require('telescope.builtin').live_grep()<cr>]]
 cmd([[nnoremap <Leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>]])
 cmd([[nnoremap <Leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>]])
 
+-- LSP bindings
+cmd('nnoremap <silent> sd <cmd>lua vim.lsp.buf.definition()<CR>')
+cmd('nnoremap <silent> K :Lspsaga hover_doc<CR>')
 
 -- Git
 api.nvim_set_keymap('n', '<Leader>gs', ':Gstatus<CR>', {noremap = true})
@@ -30,11 +33,11 @@ api.nvim_set_keymap('n', '<Leader>gd', ':Gvdiff<CR>', {noremap = true})
 
 -- search mappings: these will make it so that going to the next one in a
 -- search will center on the line it's found in
-cmd([[nnoremap n nzzzv]])
-cmd([[nnoremap N Nzzzv]])
+cmd('nnoremap n nzzzv')
+cmd('nnoremap N Nzzzv')
 
 -- use ; as :
-cmd([[nnoremap ; :]])
+cmd('nnoremap ; :')
 
 -- explorer
 api.nvim_set_keymap('n', '<Leader>ne', ':NvimTreeToggle<CR>', opt)
@@ -57,6 +60,7 @@ api.nvim_set_keymap('i', 'jj', '<ESC>', opt)
 -- Tab switch buffer
 api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', opt)
 api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', opt)
+api.nvim_set_keymap('n', '<Leader>c', ':bd<CR>', opt)
 
 -- Better nav for omnicomplete
 cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')

@@ -1,4 +1,5 @@
 O = {
+    cmdheight = 1,
     auto_close_tree = 0,
     auto_complete = true,
     colorscheme = 'nord',
