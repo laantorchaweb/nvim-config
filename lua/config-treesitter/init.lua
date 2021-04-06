@@ -3,6 +3,8 @@ local ts_config = require("nvim-treesitter.configs")
 ts_config.setup {
     ensure_installed = {
         "javascript",
+        "json",
+        "yaml",
         "html",
         "css",
         "bash",
@@ -16,7 +18,6 @@ ts_config.setup {
         enable = true,
         use_languagetree = true
     },
-    --indent = {enable = {"javascriptreact"}},
     playground = {
         enable = true,
         disable = {},
