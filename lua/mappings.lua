@@ -3,6 +3,12 @@ local api = vim.api
 local cmd = vim.cmd
 local opt = {noremap = true, silent = true}
 
+local function imap(lhs, rhs, opts)
+    local options = {noremap = false}
+    if opts then options = vim.tbl_extend('force', options, opts) end
+    api.nvim_set_keymap('i', lhs, rhs, options)
+end
+
 api.nvim_set_keymap('n', '<Space>', '<NOP>', opt)
 g.mapleader = ' '
 
@@ -11,6 +17,9 @@ api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', opt)
 
 -- clean search (highlight)
 api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', {silent = true})
+
+-- split panes
+api.nvim_set_keymap('n', '<Leader>v', ':vs<CR>', opt)
 
 -- edit init.lua
 api.nvim_set_keymap('n', '<Leader>vi', ':e ~/.config/nvim/init.lua<CR>', opt)
@@ -66,12 +75,5 @@ api.nvim_set_keymap('n', '<Leader>c', ':bd<CR>', opt)
 cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 
-
-local function imap(lhs, rhs, opts)
-    local options = {noremap = false}
-    if opts then options = vim.tbl_extend('force', options, opts) end
-    api.nvim_set_keymap('i', lhs, rhs, options)
-end
-
- -- vsnip expand
+-- vim-vsnip
 imap("<expr> <C-j>", "vsnip#expandable()  ? '<Plug>(vsnip-expand)' : '<C-j>'", {expr = true, noremap = true})

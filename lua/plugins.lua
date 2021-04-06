@@ -10,7 +10,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
-cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when there are changes in plugins.lua
+cmd('autocmd BufWritePost plugins.lua PackerCompile') -- Auto compile when there are changes in plugins.lua
 
 require('packer').init({display = {auto_clean = false}})
 
@@ -29,8 +29,9 @@ return require('packer').startup(function(use)
     use 'hrsh7th/nvim-compe'
     use 'mattn/emmet-vim'
     use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
     use "rafamadriz/friendly-snippets"
-
+    use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
 
     -- Treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -73,6 +74,7 @@ return require('packer').startup(function(use)
     -- General Plugins
     use 'tpope/vim-surround'
     use 'chaoren/vim-wordmotion'
+    use 'tpope/vim-repeat'
     use 'ntpeters/vim-better-whitespace'
     use 'kevinhwang91/nvim-bqf'
     use 'metakirby5/codi.vim'
