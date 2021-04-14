@@ -35,7 +35,7 @@ cmd('nnoremap <silent> sd <cmd>lua vim.lsp.buf.definition()<CR>')
 cmd('nnoremap <silent> K :Lspsaga hover_doc<CR>')
 
 -- Git
-api.nvim_set_keymap('n', '<Leader>gs', ':Gstatus<CR>', {noremap = true})
+api.nvim_set_keymap('n', '<Leader>gs', ':Git<CR>', {noremap = true})
 api.nvim_set_keymap('n', '<Leader>gb', ':Git blame<CR>', {noremap = true})
 api.nvim_set_keymap('n', '<Leader>gd', ':Gvdiff<CR>', {noremap = true})
 
