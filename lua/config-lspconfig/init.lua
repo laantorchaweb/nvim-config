@@ -1,5 +1,16 @@
 local lsp = require('lspconfig')
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
+
 local mapper = function(mode, key, result)
   vim.api.nvim_buf_set_keymap(0, mode, key, "<cmd>lua "..result.."<cr>", {noremap = true, silent = true})
 end
@@ -11,29 +22,43 @@ local custom_attach = function()
 end
 
 lsp.html.setup{}
-lsp.css.setup{}
-lsp.ruby.setup{}
+lsp.yaml.setup{}
+lsp.css.setup{
+  capabilities = capabilities,
+}
+
+lsp.ruby.setup{
+  capabilities = capabilities,
+  on_attach = custom_attach,
+  init_options = {documentFormatting = false, codeAction = true},
+}
 
 lsp.efm.setup{
+  capabilities = capabilities,
   on_attach = on_attach,
-  init_options = {documentFormatting = false, codeAction = false},
+  init_options = {documentFormatting = false, codeAction = true},
   filetypes = {"python", "javascriptreact", "javascript", "sh", "html", "css", "json", "yaml", "markdown"},
 }
 
 -- npm install -g flow
 lsp.flow.setup{
+  capabilities = capabilities,
   on_attach = on_attach,
+  init_options = {documentFormatting = false, codeAction = true},
   filetypes = { "javascript", "javascriptreact" },
 }
 
 -- npm install -g typescript typescript-language-server
 lsp.typescript.setup{
+  capabilities = capabilities,
   on_attach = on_attach,
+  init_options = {documentFormatting = false, codeAction = true},
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 }
 
 -- npm install -g vscode-css-languageserver-bin
 lsp.cssls.setup {
+  capabilities = capabilities,
   cmd = {
     "node", DATA_PATH .. "/lspinstall/css/vscode-css/css-language-features/server/dist/node/cssServerMain.js",
     "--stdio"
@@ -42,6 +67,7 @@ lsp.cssls.setup {
 }
 
 lsp.lua.setup{
+  capabilities = capabilities,
   on_attach = custom_attach,
   settings = {
     Lua = {

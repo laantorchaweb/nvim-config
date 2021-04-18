@@ -33,6 +33,7 @@ cmd([[nnoremap <Leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>]
 -- LSP bindings
 cmd('nnoremap <silent> sd <cmd>lua vim.lsp.buf.definition()<CR>')
 cmd('nnoremap <silent> K :Lspsaga hover_doc<CR>')
+cmd('nnoremap <silent> ca :Lspsaga code_action<CR>')
 
 -- Git
 api.nvim_set_keymap('n', '<Leader>gs', ':Git<CR>', {noremap = true})
