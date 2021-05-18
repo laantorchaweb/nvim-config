@@ -53,6 +53,7 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-media-files.nvim'
+    use 'nvim-telescope/telescope-fzy-native.nvim'
 
     -- Explorer
     use 'kyazdani42/nvim-tree.lua'
@@ -89,5 +90,5 @@ return require('packer').startup(function(use)
     use 'christoomey/vim-tmux-navigator'
 
     -- ALE
-    use 'dense-analysis/ale'
+    -- use 'dense-analysis/ale'
 end)
