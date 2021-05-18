@@ -5,7 +5,8 @@ local actions = require('telescope.actions')
 require('telescope').load_extension('media_files')
 require('telescope').setup {
     defaults = {
-        vimgrep_arguments = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+        -- vimgrep_arguments = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+        vimgrep_arguments = {'ag', '--no-group', '--no-color', '--line-number', '--column', '--smart-case'},
         prompt_position = "bottom",
         prompt_prefix = " ",
         selection_caret = " ",
@@ -15,7 +16,8 @@ require('telescope').setup {
         sorting_strategy = "descending",
         layout_strategy = "horizontal",
         layout_defaults = {horizontal = {mirror = false}, vertical = {mirror = false}},
-        file_sorter = require'telescope.sorters'.get_fuzzy_file,
+        -- file_sorter = require'telescope.sorters'.get_fuzzy_file,
+        file_sorter = require('telescope.sorters').get_fzy_sorter,
         file_ignore_patterns = { "node_modules/.*", "%-lock.json" },
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
         shorten_path = true,
@@ -63,6 +65,10 @@ require('telescope').setup {
         }
     },
     extensions = {
+        fzy_native = {
+            override_generic_sorter = false,
+            override_file_sorter = true,
+        },
         media_files = {
             -- filetypes whitelist
             filetypes = {"png", "webp", "jpg", "jpeg"},
@@ -70,3 +76,5 @@ require('telescope').setup {
         }
     }
 }
+
+require('telescope').load_extension('fzy_native')
