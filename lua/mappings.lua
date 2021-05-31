@@ -31,8 +31,8 @@ cmd([[nnoremap <Leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>]])
 cmd([[nnoremap <Leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>]])
 
 -- LSP bindings
--- api.nvim_set_keymap('n', 'sd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
--- api.nvim_set_keymap('n', 'sf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
+api.nvim_set_keymap('n', 'sd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
+api.nvim_set_keymap('n', '<Leader>sf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
 
 -- Git
 api.nvim_set_keymap('n', '<Leader>gs', ':Git<CR>', {noremap = true})

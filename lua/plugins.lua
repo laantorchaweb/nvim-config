@@ -90,5 +90,5 @@ return require('packer').startup(function(use)
     use 'christoomey/vim-tmux-navigator'
 
     -- ALE
-    -- use 'dense-analysis/ale'
+    use 'dense-analysis/ale'
 end)

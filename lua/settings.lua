@@ -26,26 +26,27 @@ cmd('set wildignore+=*node_modules**')
 
 -- ALE
 
--- cmd('highlight clear ALEErrorSign')
--- cmd('highlight clear ALEWarningSign')
---
--- g.ale_sign_error = "💣"
--- g.ale_sign_warning = "⚠️"
--- g.ale_fix_on_save = 1
--- g.ale_linters_explicit = 0
--- g.ale_sign_column_always = 1
--- g.ale_open_list = 0
--- g.ale_virtualtext_cursor = 1
--- g.ale_virtualtext_prefix = '<| '
---
--- g.ale_fixers = {
---    javascript = {'eslint', 'prettier'},
---    css = {'prettier'}
--- }
---
--- g.ale_linters = {
---    javascript = { 'flow', 'eslint' }
--- }
+cmd('highlight clear ALEErrorSign')
+cmd('highlight clear ALEWarningSign')
+
+g.ale_sign_error = "💣"
+g.ale_sign_warning = "⚠️"
+g.ale_fix_on_save = 1
+g.ale_lint_on_save = 1
+g.ale_linters_explicit = 0
+g.ale_sign_column_always = 1
+g.ale_open_list = 0
+g.ale_virtualtext_cursor = 1
+g.ale_virtualtext_prefix = '<| '
+
+g.ale_fixers = {
+   javascript = {'eslint', 'prettier'},
+   css = {'prettier'}
+}
+
+g.ale_linters = {
+   javascript = { 'flow', 'eslint' }
+}
 
 -- better whitespace
 

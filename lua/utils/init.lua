@@ -27,7 +27,7 @@ opt("o", "pumheight", 10) -- makes popup menu smaller
 opt("o", "fileencoding", "utf-8") -- the encoding written to file
 
 
-opt("o", "t_Co", "256") -- support 256 colors
+-- opt("o", "t_Co", "256") -- support 256 colors
 opt("o", "conceallevel",  0) -- so that I can see `` in markdown files
 
 
