@@ -16,7 +16,7 @@ require('telescope').setup {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         file_ignore_patterns = { "node_modules/.*", "%-lock.json" },
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
-        path_display = true,
+        path_display = {},
         winblend = 0,
         layout_config = {
             width = 0.75,
