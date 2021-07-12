@@ -49,7 +49,6 @@ g.ale_linters = {
 }
 
 -- better whitespace
-
 g.better_whitespace_guicolor = '#ff7b72'
 
 -- TMUX
@@ -57,3 +56,7 @@ g.tmux_navigator_disable_when_zoomed = 1
 
 -- emmet
 g.user_emmet_leader_key='<C-Z>'
+
+-- Ack (ripgrep)
+cmd('cnoreabbrev Ack Ack!')
+cmd([[let g:ackprg = 'rg -S --no-heading --vimgrep']])

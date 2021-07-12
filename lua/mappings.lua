@@ -30,9 +30,14 @@ cmd([[nnoremap <Leader>a <cmd>lua require('telescope.builtin').live_grep()<cr>]]
 cmd([[nnoremap <Leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>]])
 cmd([[nnoremap <Leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>]])
 
+cmd([[nnoremap <Leader>ac :Ack!<Space>]])
 -- LSP bindings
 api.nvim_set_keymap('n', 'sd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
 api.nvim_set_keymap('n', '<Leader>sf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
+
+-- Harpoon
+api.nvim_set_keymap('n', '<Leader>h', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', opt)
+api.nvim_set_keymap('n', '<Leader>ha', '<cmd>lua require("harpoon.mark").add_file()<CR>', opt)
 
 -- Git
 api.nvim_set_keymap('n', '<Leader>gs', ':Git<CR>', {noremap = true})

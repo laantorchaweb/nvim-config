@@ -25,7 +25,7 @@ require'compe'.setup {
         vsnip = {kind = "  "},
         nvim_lsp = {kind = "  "},
         nvim_lua = true,
-        spell = {kind = "  "},
+        -- spell = {kind = "  "},
         tags = false,
         vim_dadbod_completion = true,
         emoji = {kind = " ﲃ ", filetypes={"markdown"}}

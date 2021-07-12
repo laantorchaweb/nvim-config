@@ -5,9 +5,7 @@ local actions = require('telescope.actions')
 require('telescope').load_extension('media_files')
 require('telescope').setup {
     defaults = {
-        -- vimgrep_arguments = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
-        vimgrep_arguments = {'ag', '--no-group', '--no-color', '--line-number', '--column', '--smart-case'},
-        prompt_position = "bottom",
+        vimgrep_arguments = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
         prompt_prefix = " ",
         selection_caret = " ",
         entry_prefix = "  ",
@@ -15,17 +13,19 @@ require('telescope').setup {
         selection_strategy = "reset",
         sorting_strategy = "descending",
         layout_strategy = "horizontal",
-        layout_defaults = {horizontal = {mirror = false}, vertical = {mirror = false}},
-        -- file_sorter = require'telescope.sorters'.get_fuzzy_file,
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         file_ignore_patterns = { "node_modules/.*", "%-lock.json" },
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
-        shorten_path = true,
+        path_display = true,
         winblend = 0,
-        width = 0.75,
-        preview_cutoff = 120,
-        results_height = 1,
-        results_width = 0.8,
+        layout_config = {
+            width = 0.75,
+            height = 40,
+            prompt_position = "bottom",
+            preview_cutoff = 120,
+            horizontal = {mirror = false},
+            vertical = {mirror = false},
+        },
         border = {},
         borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
         color_devicons = true,
@@ -48,33 +48,33 @@ require('telescope').setup {
                 ["<esc>"] = actions.close,
 
                 -- Otherwise, just set the mapping to the function that you want it to be.
-                -- ["<C-i>"] = actions.select_horizontal,
+                    -- ["<C-i>"] = actions.select_horizontal,
 
-                -- Add up multiple actions
-                ["<CR>"] = actions.select_default + actions.center
+                    -- Add up multiple actions
+                    ["<CR>"] = actions.select_default + actions.center
 
-                -- You can perform as many actions in a row as you like
-                -- ["<CR>"] = actions.select_default + actions.center + my_cool_custom_action,
+                    -- You can perform as many actions in a row as you like
+                    -- ["<CR>"] = actions.select_default + actions.center + my_cool_custom_action,
+                },
+                n = {
+                    ["<C-j>"] = actions.move_selection_next,
+                    ["<C-k>"] = actions.move_selection_previous,
+                    ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+                    -- ["<C-i>"] = my_cool_custom_action,
+                }
+            }
+        },
+        extensions = {
+            fzy_native = {
+                override_generic_sorter = false,
+                override_file_sorter = true,
             },
-            n = {
-                ["<C-j>"] = actions.move_selection_next,
-                ["<C-k>"] = actions.move_selection_previous,
-                ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-                -- ["<C-i>"] = my_cool_custom_action,
+            media_files = {
+                -- filetypes whitelist
+                filetypes = {"png", "webp", "jpg", "jpeg"},
+                find_cmd = "rg" -- find command (defaults to `fd`)
             }
         }
-    },
-    extensions = {
-        fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true,
-        },
-        media_files = {
-            -- filetypes whitelist
-            filetypes = {"png", "webp", "jpg", "jpeg"},
-            find_cmd = "rg" -- find command (defaults to `fd`)
-        }
     }
-}
 
 require('telescope').load_extension('fzy_native')

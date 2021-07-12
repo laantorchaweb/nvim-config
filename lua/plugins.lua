@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-media-files.nvim'
     use 'nvim-telescope/telescope-fzy-native.nvim'
+    use 'ThePrimeagen/harpoon'
 
     -- Explorer
     use 'kyazdani42/nvim-tree.lua'
@@ -84,6 +85,7 @@ return require('packer').startup(function(use)
     use 'terrortylor/nvim-comment'
     use 'junegunn/goyo.vim'
     use 'windwp/nvim-autopairs'
+    use 'mileszs/ack.vim'
 
     -- Tmux
     use 'tmux-plugins/vim-tmux'
