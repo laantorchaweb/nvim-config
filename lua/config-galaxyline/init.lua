@@ -67,7 +67,7 @@ gls.left[2] = {
         condition = condition.check_git_workspace,
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.orange, colors.bg}
+        highlight = {colors.string_orange, colors.bg}
     }
 }
 
@@ -77,7 +77,7 @@ gls.left[3] = {
         condition = condition.check_git_workspace,
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.grey, colors.bg}
+        highlight = {colors.string_orange, colors.bg}
     }
 }
 
@@ -89,6 +89,7 @@ gls.left[4] = {
         highlight = {colors.green, colors.bg}
     }
 }
+
 gls.left[5] = {
     DiffModified = {
         provider = 'DiffModified',
@@ -97,6 +98,7 @@ gls.left[5] = {
         highlight = {colors.blue, colors.bg}
     }
 }
+
 gls.left[6] = {
     DiffRemove = {
         provider = 'DiffRemove',
@@ -109,6 +111,7 @@ gls.left[6] = {
 gls.right[1] = {
     DiagnosticError = {provider = 'DiagnosticError', icon = '  ', highlight = {colors.error_red, colors.bg}}
 }
+
 gls.right[2] = {DiagnosticWarn = {provider = 'DiagnosticWarn', icon = '  ', highlight = {colors.orange, colors.bg}}}
 
 gls.right[3] = {
@@ -126,7 +129,7 @@ gls.right[5] = {
             return true
         end,
         icon = ' ',
-        highlight = {colors.grey, colors.bg}
+        highlight = {colors.string_orange, colors.bg}
     }
 }
 
@@ -149,38 +152,16 @@ gls.right[7] = {
 }
 
 gls.right[8] = {
-    Tabstop = {
-        provider = function()
-            return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
-        end,
+    FileEncode = {
+        provider = 'FileName',
         condition = condition.hide_in_width,
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.grey, colors.bg}
+        highlight = {colors.purple, colors.bg}
     }
 }
 
 gls.right[9] = {
-    BufferType = {
-        provider = 'FileTypeName',
-        condition = condition.hide_in_width,
-        separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.grey, colors.bg}
-    }
-}
-
-gls.right[10] = {
-    FileEncode = {
-        provider = 'FileEncode',
-        condition = condition.hide_in_width,
-        separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.grey, colors.bg}
-    }
-}
-
-gls.right[11] = {
     Space = {
         provider = function()
             return ' '
@@ -201,7 +182,7 @@ gls.short_line_left[1] = {
 }
 
 gls.short_line_left[2] = {
-    SFileName = {provider = 'SFileName', condition = condition.buffer_not_empty, highlight = {colors.grey, colors.bg}}
+    SFileName = {provider = 'SFileName', condition = condition.buffer_not_empty, highlight = {colors.purple, colors.bg}}
 }
 
-gls.short_line_right[1] = {BufferIcon = {provider = 'BufferIcon', highlight = {colors.grey, colors.bg}}}
+gls.short_line_right[1] = {BufferIcon = {provider = 'BufferIcon', highlight = {colors.purple, colors.bg}}}
