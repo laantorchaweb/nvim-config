@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
     use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
 
     -- Treesitter
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use { 'nvim-treesitter/nvim-treesitter', branch = '0.5-compat', run = ':TSUpdate' }
     use 'p00f/nvim-ts-rainbow'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -43,7 +43,6 @@ return require('packer').startup(function(use)
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
     use 'ryanoasis/vim-devicons'
-
     -- Status Line and Bufferline
     use 'glepnir/galaxyline.nvim'
     use 'romgrk/barbar.nvim'

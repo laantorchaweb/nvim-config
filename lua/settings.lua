@@ -1,5 +1,4 @@
 local g   = vim.g
-local api = vim.api
 local cmd = vim.cmd
 
 cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
@@ -50,6 +49,8 @@ g.ale_linters = {
 
 -- better whitespace
 g.better_whitespace_guicolor = '#ff7b72'
+g.better_whitespace_skip_empty_lines=1
+
 
 -- TMUX
 g.tmux_navigator_disable_when_zoomed = 1

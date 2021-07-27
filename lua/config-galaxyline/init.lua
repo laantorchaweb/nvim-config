@@ -1,6 +1,5 @@
 local gl = require('galaxyline')
 -- get my theme in galaxyline repo
--- local colors = require('galaxyline.theme').default
 local colors = {
     bg = '#222a35',--'#2E2E2E',
     yellow = '#DCDCAA',
@@ -142,14 +141,14 @@ gls.right[6] = {
     }
 }
 
-gls.right[7] = {
-    PerCent = {
-        provider = 'LinePercent',
-        separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.grey, colors.bg}
-    }
-}
+-- gls.right[7] = {
+--     PerCent = {
+--         provider = 'LinePercent',
+--         separator = ' ',
+--         separator_highlight = {'NONE', colors.bg},
+--         highlight = {colors.grey, colors.bg}
+--     }
+-- }
 
 gls.right[8] = {
     FileEncode = {

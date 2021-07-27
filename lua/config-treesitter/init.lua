@@ -25,6 +25,6 @@ ts_config.setup {
         persist_queries = false -- Whether the query persists across vim sessions
     },
     autotag = {enable = true},
-    rainbow = {enable = true},
+    rainbow = {enable = true, extended_mode = true },
     context_commentstring = {enable = true, config = {javascriptreact = {style_element = '{/*%s*/}'}}}
 }

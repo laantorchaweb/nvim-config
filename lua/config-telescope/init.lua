@@ -6,7 +6,7 @@ require('telescope').load_extension('media_files')
 require('telescope').setup {
     defaults = {
         vimgrep_arguments = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
-        prompt_prefix = " ",
+        prompt_prefix = "  ",
         selection_caret = " ",
         entry_prefix = "  ",
         initial_mode = "insert",
@@ -20,7 +20,7 @@ require('telescope').setup {
         winblend = 0,
         layout_config = {
             width = 0.75,
-            height = 40,
+            height = 30,
             prompt_position = "bottom",
             preview_cutoff = 120,
             horizontal = {mirror = false},
