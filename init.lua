@@ -1,8 +1,8 @@
-local g   = vim.g
+local g = vim.g
 
 g.auto_save = 0
 
-require('plugins')
+require("plugins")
 require("globals")
 require("utils")
 require("settings")

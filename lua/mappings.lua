@@ -13,7 +13,7 @@ api.nvim_set_keymap('n', '<Space>', '<NOP>', opt)
 g.mapleader = ' '
 
 -- no hl
-api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', opt)
+api.nvim_set_keymap('n', '<Leader>hh', ':set hlsearch!<CR>', opt)
 
 -- clean search (highlight)
 api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', {silent = true})
@@ -29,11 +29,19 @@ cmd([[nnoremap <Leader>e <cmd>lua require('telescope.builtin').find_files()<cr>]
 cmd([[nnoremap <Leader>a <cmd>lua require('telescope.builtin').live_grep()<cr>]])
 cmd([[nnoremap <Leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>]])
 cmd([[nnoremap <Leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>]])
+cmd([[nnoremap <leader>fgb :lua require('telescope.builtin').git_branches()<CR>]])
+cmd([[nnoremap <leader>fw :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>]])
+cmd([[nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>]])
 
 cmd([[nnoremap <Leader>ac :Ack!<Space>]])
+
 -- LSP bindings
 api.nvim_set_keymap('n', 'sd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
 api.nvim_set_keymap('n', '<Leader>sf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
+api.nvim_set_keymap('n', '<Leader>si', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
+api.nvim_set_keymap('n', '<Leader>ssh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
+api.nvim_set_keymap('n', '<Leader>srr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
+api.nvim_set_keymap('n', '<Leader>srn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
 
 -- Harpoon
 api.nvim_set_keymap('n', '<Leader>h', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', opt)
@@ -82,3 +90,6 @@ cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 
 -- vim-vsnip
 imap("<expr> <C-j>", "vsnip#expandable()  ? '<Plug>(vsnip-expand)' : '<C-j>'", {expr = true, noremap = true})
+
+-- when Telescope fails
+cmd('nnoremap <silent> <leader>f :FZF -m<CR>')

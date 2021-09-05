@@ -2,10 +2,10 @@ local actions = require('telescope.actions')
 
 -- Global remapping
 ------------------------------
-require('telescope').load_extension('media_files')
 require('telescope').setup {
     defaults = {
-        vimgrep_arguments = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+        -- vimgrep_arguments = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+        vimgrep_arguments = {'ag', '--no-group', '--no-color', '--line-number', '--column', '--smart-case'},
         prompt_prefix = "  ",
         selection_caret = " ",
         entry_prefix = "  ",
@@ -66,7 +66,7 @@ require('telescope').setup {
         },
         extensions = {
             fzy_native = {
-                override_generic_sorter = false,
+                override_generic_sorter = true,
                 override_file_sorter = true,
             },
             media_files = {

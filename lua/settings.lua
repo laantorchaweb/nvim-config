@@ -61,3 +61,7 @@ g.user_emmet_leader_key='<C-Z>'
 -- Ack (ripgrep)
 cmd('cnoreabbrev Ack Ack!')
 cmd([[let g:ackprg = 'rg -S --no-heading --vimgrep']])
+
+cmd([[let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""']])
+cmd([[set grepprg=ag\ --nogroup\ --nocolor]])
+

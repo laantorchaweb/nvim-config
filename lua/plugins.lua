@@ -85,6 +85,8 @@ return require('packer').startup(function(use)
     use 'junegunn/goyo.vim'
     use 'windwp/nvim-autopairs'
     use 'mileszs/ack.vim'
+    use 'junegunn/fzf'
+    use 'junegunn/fzf.vim'
 
     -- Tmux
     use 'tmux-plugins/vim-tmux'
@@ -92,4 +94,5 @@ return require('packer').startup(function(use)
 
     -- ALE
     use 'dense-analysis/ale'
+    -- use 'dense-analysis/ale'
 end)
