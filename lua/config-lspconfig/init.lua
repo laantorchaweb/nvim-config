@@ -37,7 +37,7 @@ lsp.efm.setup{
   capabilities = capabilities,
   on_attach = on_attach,
   init_options = {documentFormatting = false, codeAction = true},
-  filetypes = {"python", "javascriptreact", "javascript", "sh", "html", "css", "json", "yaml", "markdown"},
+  filetypes = {"python", "javascriptreact", "javascript", "sh", "html", "css", "json", "yaml", "markdown", "typescript", "typescriptreact"},
 }
 
 -- npm install -g flow
@@ -45,7 +45,7 @@ lsp.flow.setup{
   capabilities = capabilities,
   on_attach = on_attach,
   init_options = {documentFormatting = false, codeAction = true},
-  filetypes = { "javascript", "javascriptreact" },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx" },
 }
 
 -- npm install -g typescript typescript-language-server
@@ -72,7 +72,7 @@ lsp.lua.setup{
   settings = {
     Lua = {
       diagnostics = {
-        globals = {"vim", "on_attach"},
+        globals = {"vim", "on_attach", "root_pattern"},
         disable = {"lowercase-global"}
       }
     }

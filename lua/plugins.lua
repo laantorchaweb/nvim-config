@@ -94,5 +94,4 @@ return require('packer').startup(function(use)
 
     -- ALE
     use 'dense-analysis/ale'
-    -- use 'dense-analysis/ale'
 end)

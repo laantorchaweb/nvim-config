@@ -44,7 +44,7 @@ g.ale_fixers = {
 }
 
 g.ale_linters = {
-   javascript = { 'flow', 'eslint' }
+   javascript = {'flow', 'eslint'}
 }
 
 -- better whitespace
