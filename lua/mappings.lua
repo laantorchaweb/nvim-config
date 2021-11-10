@@ -42,6 +42,7 @@ api.nvim_set_keymap('n', '<Leader>si', '<cmd>lua vim.lsp.buf.implementation()<CR
 api.nvim_set_keymap('n', '<Leader>ssh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
 api.nvim_set_keymap('n', '<Leader>srr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
 api.nvim_set_keymap('n', '<Leader>srn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
+api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
 
 -- Harpoon
 api.nvim_set_keymap('n', '<Leader>h', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', opt)

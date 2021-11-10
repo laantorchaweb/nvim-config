@@ -21,10 +21,11 @@ return require('packer').startup(function(use)
     -- LSP
     use 'neovim/nvim-lspconfig'
     -- use 'glepnir/lspsaga.nvim' unmaintained since april 2021
-    use 'tami5/lspsaga.nvim'
+    use { 'tami5/lspsaga.nvim', branch = 'nvim51' }
     use 'onsails/lspkind-nvim'
     use 'kosayoda/nvim-lightbulb'
-    use 'kabouzeid/nvim-lspinstall'
+    -- use 'kabouzeid/nvim-lspinstall'
+    use 'williamboman/nvim-lsp-installer'
 
     -- Autocomplete
     use 'hrsh7th/nvim-compe'
