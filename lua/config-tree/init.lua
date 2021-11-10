@@ -2,10 +2,9 @@ vim.cmd [[packadd nvim-tree.lua]]
 
 vim.o.termguicolors = true
 
-vim.g.nvim_tree_ignore = {".git", "node_modules", ".cache"}
-vim.g.nvim_tree_quit_on_open = 0
+vim.g.nvim_tree_gitignore = 1
+vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_hide_dotfiles = 0
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_root_folder_modifier = ":~"
 
@@ -49,7 +48,9 @@ require'nvim-tree'.setup {
     open_on_tab         = false,
     hijack_cursor       = false,
     update_cwd          = false,
-    lsp_diagnostics     = false,
+    diagnostics         = {
+        enable = false
+    },
     update_focused_file = {
         enable      = false,
         update_cwd  = false,
@@ -68,5 +69,8 @@ require'nvim-tree'.setup {
             custom_only = false,
             list = {}
         }
+    },
+    filters = {
+        dotfiles = false
     }
 }
