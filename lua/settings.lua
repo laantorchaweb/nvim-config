@@ -1,6 +1,11 @@
 local g   = vim.g
 local cmd = vim.cmd
 
+
+g.gitblame_enabled = 1
+g.gitblame_date_format = '%x'
+g.gitblame_message_template = '<summary> • <author> • <date>'
+
 cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
 cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
 
@@ -64,4 +69,3 @@ cmd([[let g:ackprg = 'rg -S --no-heading --vimgrep']])
 
 cmd([[let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""']])
 cmd([[set grepprg=ag\ --nogroup\ --nocolor]])
-

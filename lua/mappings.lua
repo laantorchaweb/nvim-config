@@ -34,6 +34,7 @@ cmd([[nnoremap <leader>fw :lua require('telescope.builtin').grep_string { search
 cmd([[nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>]])
 
 cmd([[nnoremap <Leader>ac :Ack!<Space>]])
+cmd([[nnoremap <Leader>bb :GitBlameToggle<CR>]])
 
 -- LSP bindings
 api.nvim_set_keymap('n', 'sd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)

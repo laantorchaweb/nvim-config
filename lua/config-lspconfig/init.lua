@@ -1,5 +1,10 @@
 -- local lsp = require('lspconfig')
-local nvim_lsp = require('lspconfig')
+-- local nvim_lsp = require('lspconfig')
+-- 
+-- nvim_lsp.flow.setup({
+--   init_options = {documentFormatting = false, codeAction = true},
+--   filetypes = { "javascript", "javascriptreact", "javascript.jsx" },
+-- })
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer

@@ -20,12 +20,13 @@ return require('packer').startup(function(use)
 
     -- LSP
     use 'neovim/nvim-lspconfig'
-    -- use 'glepnir/lspsaga.nvim' unmaintained since april 2021
     use { 'tami5/lspsaga.nvim', branch = 'nvim51' }
     use 'onsails/lspkind-nvim'
     use 'kosayoda/nvim-lightbulb'
-    -- use 'kabouzeid/nvim-lspinstall'
     use 'williamboman/nvim-lsp-installer'
+    use 'jose-elias-alvarez/null-ls.nvim'
+    use 'RishabhRD/popfix'
+    use 'RishabhRD/nvim-lsputils'
 
     -- Autocomplete
     use 'hrsh7th/cmp-nvim-lsp'
@@ -34,26 +35,24 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
 
+    use 'mattn/emmet-vim'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
-
-    -- use 'hrsh7th/nvim-compe'
-    use 'mattn/emmet-vim'
-    use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
-    use "rafamadriz/friendly-snippets"
-    use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
+    use 'rafamadriz/friendly-snippets'
+    use { 'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile' }
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', branch = '0.5-compat', run = ':TSUpdate' }
     use 'p00f/nvim-ts-rainbow'
     use 'lukas-reineke/indent-blankline.nvim'
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use { 'JoosepAlviste/nvim-ts-context-commentstring', opt = true }
     use 'windwp/nvim-ts-autotag'
 
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
     use 'ryanoasis/vim-devicons'
+
     -- Status Line and Bufferline
     use 'glepnir/galaxyline.nvim'
     use 'romgrk/barbar.nvim'
@@ -64,7 +63,7 @@ return require('packer').startup(function(use)
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-media-files.nvim'
     use 'nvim-telescope/telescope-fzy-native.nvim'
-    use 'ThePrimeagen/harpoon'
+    use { 'ThePrimeagen/harpoon', opt = true }
 
     -- Explorer
     use 'kyazdani42/nvim-tree.lua'
@@ -72,22 +71,22 @@ return require('packer').startup(function(use)
     -- Color
     use 'christianchiarulli/nvcode-color-schemes.vim'
     use 'norcalli/nvim-colorizer.lua'
-    use 'sheerun/vim-polyglot'
+    -- use 'sheerun/vim-polyglot'
 
     -- Git
-    use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
-    use 'f-person/git-blame.nvim'
+    use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} }
+    use { 'f-person/git-blame.nvim', opt = true }
     use 'tpope/vim-fugitive'
-    use 'tpope/vim-rhubarb'
+    use { 'tpope/vim-rhubarb', opt = true }
 
     -- Navigation
-    use 'phaazon/hop.nvim'
+    use { 'phaazon/hop.nvim'}
 
     -- General Plugins
     use 'tpope/vim-surround'
     use 'chaoren/vim-wordmotion'
     use 'tpope/vim-repeat'
-    use 'ntpeters/vim-better-whitespace'
+    use { 'ntpeters/vim-better-whitespace', opt = true }
     use 'kevinhwang91/nvim-bqf'
     use 'metakirby5/codi.vim'
     use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}
@@ -104,5 +103,5 @@ return require('packer').startup(function(use)
     use 'christoomey/vim-tmux-navigator'
 
     -- ALE
-    use 'dense-analysis/ale'
+    -- use 'dense-analysis/ale'
 end)
