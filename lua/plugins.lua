@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
 
     -- LSP
     use 'neovim/nvim-lspconfig'
-    use { 'tami5/lspsaga.nvim', branch = 'nvim51' }
+    use 'tami5/lspsaga.nvim'
     use 'onsails/lspkind-nvim'
     use 'kosayoda/nvim-lightbulb'
     use 'williamboman/nvim-lsp-installer'
@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
     use { 'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile' }
 
     -- Treesitter
-    use { 'nvim-treesitter/nvim-treesitter', branch = '0.5-compat', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'p00f/nvim-ts-rainbow'
     use 'lukas-reineke/indent-blankline.nvim'
     use { 'JoosepAlviste/nvim-ts-context-commentstring', opt = true }
@@ -63,7 +63,7 @@ return require('packer').startup(function(use)
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-media-files.nvim'
     use 'nvim-telescope/telescope-fzy-native.nvim'
-    use { 'ThePrimeagen/harpoon', opt = true }
+    -- use { 'ThePrimeagen/harpoon', opt = true }
 
     -- Explorer
     use 'kyazdani42/nvim-tree.lua'
@@ -89,7 +89,7 @@ return require('packer').startup(function(use)
     use { 'ntpeters/vim-better-whitespace', opt = true }
     use 'kevinhwang91/nvim-bqf'
     use 'metakirby5/codi.vim'
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}
+    use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true }
     use 'voldikss/vim-floaterm'
     use 'terrortylor/nvim-comment'
     use 'junegunn/goyo.vim'
@@ -102,6 +102,4 @@ return require('packer').startup(function(use)
     use 'tmux-plugins/vim-tmux'
     use 'christoomey/vim-tmux-navigator'
 
-    -- ALE
-    -- use 'dense-analysis/ale'
 end)

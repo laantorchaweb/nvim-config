@@ -1,3 +1,4 @@
+local cmd = vim.cmd
 local ts_config = require("nvim-treesitter.configs")
 
 ts_config.setup {
@@ -28,3 +29,8 @@ ts_config.setup {
     rainbow = {enable = true, extended_mode = true },
     context_commentstring = {enable = true, config = {javascriptreact = {style_element = '{/*%s*/}'}}}
 }
+
+cmd([[hi DiagnosticError guifg=#bf616a guibg=#2e3440]])
+cmd([[hi DiagnosticWarn guifg=#e0af68 guibg=#2e3440]])
+cmd([[hi DiagnosticInfo guifg=#0db9d7 guibg=#2e3440]])
+cmd([[hi DiagnosticHint guifg=#10B981 guibg=#2e3440]])
