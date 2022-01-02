@@ -71,7 +71,6 @@ return require('packer').startup(function(use)
     -- Color
     use 'christianchiarulli/nvcode-color-schemes.vim'
     use 'norcalli/nvim-colorizer.lua'
-    -- use 'sheerun/vim-polyglot'
 
     -- Git
     use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} }

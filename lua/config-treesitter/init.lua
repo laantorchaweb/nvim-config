@@ -33,4 +33,4 @@ ts_config.setup {
 cmd([[hi DiagnosticError guifg=#bf616a guibg=#2e3440]])
 cmd([[hi DiagnosticWarn guifg=#e0af68 guibg=#2e3440]])
 cmd([[hi DiagnosticInfo guifg=#0db9d7 guibg=#2e3440]])
-cmd([[hi DiagnosticHint guifg=#10B981 guibg=#2e3440]])
+cmd([[hi DiagnosticHint guifg=#4f5a75 guibg=#2e3440]])
