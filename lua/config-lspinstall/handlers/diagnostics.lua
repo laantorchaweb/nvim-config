@@ -23,13 +23,13 @@ function M.on_attach()
                 diagnostics[i].message = string.format("%s: %s", v.source, v.message)
             end
 
-            vim.lsp.diagnostic.save(diagnostics, bufnr, ctx.client_id)
+            vim.lsp.diagnostic.set(diagnostics, bufnr, ctx.client_id)
 
             if not vim.api.nvim_buf_is_loaded(bufnr) then
                 return
             end
 
-            vim.lsp.diagnostic.display(diagnostics, bufnr, ctx.client_id, config)
+            vim.lsp.diagnostic.show(diagnostics, bufnr, ctx.client_id, config)
         end
 
     vim.o.updatetime = 250
