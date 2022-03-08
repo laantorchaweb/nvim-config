@@ -2,7 +2,6 @@ vim.cmd [[packadd nvim-tree.lua]]
 
 vim.o.termguicolors = true
 
-vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_root_folder_modifier = ":~"
@@ -37,6 +36,7 @@ require'nvim-tree'.setup {
     disable_netrw       = true,
     hijack_netrw        = true,
     open_on_setup       = false,
+    quit_on_open        = true,
     ignore_ft_on_setup  = { ".git", "node_modules", ".cache" },
     update_to_buf_dir   = {
         enable = true,

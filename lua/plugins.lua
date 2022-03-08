@@ -44,7 +44,6 @@ return require('packer').startup(function(use)
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use 'p00f/nvim-ts-rainbow'
     use 'lukas-reineke/indent-blankline.nvim'
     use { 'JoosepAlviste/nvim-ts-context-commentstring', opt = true }
     use 'windwp/nvim-ts-autotag'
@@ -54,7 +53,7 @@ return require('packer').startup(function(use)
     use 'ryanoasis/vim-devicons'
 
     -- Status Line and Bufferline
-    use 'glepnir/galaxyline.nvim'
+    use 'NTBBloodbath/galaxyline.nvim'
     use 'romgrk/barbar.nvim'
 
     -- Telescope
@@ -63,7 +62,6 @@ return require('packer').startup(function(use)
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-media-files.nvim'
     use 'nvim-telescope/telescope-fzy-native.nvim'
-    -- use { 'ThePrimeagen/harpoon', opt = true }
 
     -- Explorer
     use 'kyazdani42/nvim-tree.lua'
@@ -74,28 +72,23 @@ return require('packer').startup(function(use)
 
     -- Git
     use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} }
-    use 'f-person/git-blame.nvim'
+    use { 'f-person/git-blame.nvim', opt = true }
     use 'tpope/vim-fugitive'
     use { 'tpope/vim-rhubarb', opt = true }
-
-    -- Navigation
-    use { 'phaazon/hop.nvim'}
 
     -- General Plugins
     use 'tpope/vim-surround'
     use 'chaoren/vim-wordmotion'
     use 'tpope/vim-repeat'
-    use { 'ntpeters/vim-better-whitespace', opt = true }
     use 'kevinhwang91/nvim-bqf'
-    use 'metakirby5/codi.vim'
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true }
-    use 'voldikss/vim-floaterm'
     use 'terrortylor/nvim-comment'
-    use 'junegunn/goyo.vim'
     use 'windwp/nvim-autopairs'
-    use 'mileszs/ack.vim'
-    use 'junegunn/fzf'
-    use 'junegunn/fzf.vim'
+    use { 'ntpeters/vim-better-whitespace', opt = true }
+    use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true }
+    use { 'voldikss/vim-floaterm', opt = true }
+    use { 'mileszs/ack.vim', opt = true }
+    use { 'junegunn/fzf', opt = true }
+    use { 'junegunn/fzf.vim', opt = true }
 
     -- Tmux
     use 'tmux-plugins/vim-tmux'
