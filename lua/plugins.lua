@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'RishabhRD/popfix'
     use 'RishabhRD/nvim-lsputils'
+    use 'github/copilot.vim'
 
     -- Autocomplete
     use 'hrsh7th/cmp-nvim-lsp'
@@ -71,9 +72,9 @@ return require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua'
 
     -- Git
-    use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} }
-    use { 'f-person/git-blame.nvim', opt = true }
     use 'tpope/vim-fugitive'
+    use 'f-person/git-blame.nvim'
+    use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} }
     use { 'tpope/vim-rhubarb', opt = true }
 
     -- General Plugins
@@ -83,10 +84,10 @@ return require('packer').startup(function(use)
     use 'kevinhwang91/nvim-bqf'
     use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
+    use 'mileszs/ack.vim'
     use { 'ntpeters/vim-better-whitespace', opt = true }
     use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true }
     use { 'voldikss/vim-floaterm', opt = true }
-    use { 'mileszs/ack.vim', opt = true }
     use { 'junegunn/fzf', opt = true }
     use { 'junegunn/fzf.vim', opt = true }
 

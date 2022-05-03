@@ -44,7 +44,6 @@ require'nvim-tree'.setup {
     },
     follow              = true,
     auto_open           = false,
-    auto_close          = O.auto_close_tree,
     open_on_tab         = false,
     hijack_cursor       = false,
     update_cwd          = false,
