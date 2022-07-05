@@ -10,7 +10,6 @@ require("mappings")
 
 require("config-tree")
 require("config-cmp")
--- require("config-compe")
 require("config-lspkind")
 require("config-comment")
 require("config-floaterm")

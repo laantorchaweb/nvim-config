@@ -7,16 +7,16 @@ local handlers = require('config-lspinstall/handlers')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
-    appearance.setup()
-    vim.cmd [[augroup Format]]
-    vim.cmd [[autocmd! * <buffer>]]
-    vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.cmd [[augroup END]]
+  appearance.setup()
+  vim.cmd [[augroup Format]]
+  vim.cmd [[autocmd! * <buffer>]]
+  vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+  vim.cmd [[augroup END]]
 
-    handlers.on_attach()
+  handlers.on_attach()
 end
 
-lsp_installer.on_server_ready(function (server)
+lsp_installer.on_server_ready(function(server)
   local opts = {
     on_attach = on_attach,
     capabilities = capabilities
@@ -29,7 +29,7 @@ lsp_installer.on_server_ready(function (server)
   if server.name == 'eslint' then
     opts.root_dir = lspconfig.util.root_pattern('.eslintrc', '.eslintrc.json', '.git')
 
-    opts.on_attach = function (client, bufnr)
+    opts.on_attach = function(client, bufnr)
       client.resolved_capabilities.document_formatting = true
       on_attach(client, bufnr)
     end
@@ -50,4 +50,3 @@ null_ls.setup({
     null_ls.builtins.formatting.eslint_d,
   }
 })
-

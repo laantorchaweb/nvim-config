@@ -1,58 +1,57 @@
 local g   = vim.g
 local api = vim.api
 local cmd = vim.cmd
-local opt = {noremap = true, silent = true}
+local opt = { noremap = true, silent = true }
 
 local function imap(lhs, rhs, opts)
-    local options = {noremap = false}
-    if opts then options = vim.tbl_extend('force', options, opts) end
-    api.nvim_set_keymap('i', lhs, rhs, options)
+  local options = { noremap = false }
+  if opts then options = vim.tbl_extend('force', options, opts) end
+  api.nvim_set_keymap('i', lhs, rhs, options)
 end
 
 api.nvim_set_keymap('n', '<Space>', '<NOP>', opt)
 g.mapleader = ' '
 
 -- no hl
-api.nvim_set_keymap('n', '<Leader>hh', ':set hlsearch!<CR>', opt)
+api.nvim_set_keymap('n', '<leader>hh', ':set hlsearch!<CR>', opt)
 
 -- clean search (highlight)
-api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', {silent = true})
+api.nvim_set_keymap('n', '<leader><Space>', ':noh<CR>', { silent = true })
 
 -- split panes
-api.nvim_set_keymap('n', '<Leader>v', ':vs<CR>', opt)
+api.nvim_set_keymap('n', '<leader>v', ':vs<CR>', opt)
 
 -- edit init.lua
-api.nvim_set_keymap('n', '<Leader>vi', ':e ~/.config/nvim/init.lua<CR>', opt)
+api.nvim_set_keymap('n', '<leader>vi', ':e ~/.config/nvim/init.lua<CR>', opt)
 
 -- Telescope
-cmd([[nnoremap <Leader>e <cmd>lua require('telescope.builtin').find_files()<cr>]])
-cmd([[nnoremap <Leader>a <cmd>lua require('telescope.builtin').live_grep()<cr>]])
-cmd([[nnoremap <Leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>]])
-cmd([[nnoremap <Leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>]])
+cmd([[nnoremap <leader>e <cmd>lua require('telescope.builtin').find_files()<cr>]])
+cmd([[nnoremap <leader>a <cmd>lua require('telescope.builtin').live_grep()<cr>]])
+cmd([[nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>]])
+cmd([[nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>]])
 cmd([[nnoremap <leader>fgb :lua require('telescope.builtin').git_branches()<CR>]])
 cmd([[nnoremap <leader>fw :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>]])
 cmd([[nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>]])
 
-cmd([[nnoremap <Leader>ac :Ack!<Space>]])
-cmd([[nnoremap <Leader>bb :GitBlameToggle<CR>]])
+cmd([[nnoremap <leader>ac :Ack!<Space>]])
+cmd([[nnoremap <leader>bb :GitBlameToggle<CR>]])
 
 -- LSP bindings
 api.nvim_set_keymap('n', 'sd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
-api.nvim_set_keymap('n', '<Leader>sf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
-api.nvim_set_keymap('n', '<Leader>si', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
-api.nvim_set_keymap('n', '<Leader>ssh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
-api.nvim_set_keymap('n', '<Leader>srr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
-api.nvim_set_keymap('n', '<Leader>srn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
+api.nvim_set_keymap('n', 'gT', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
+api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
+api.nvim_set_keymap('n', '<leader>df', '<cmd>lua vim.diagnostic.goto_next()<CR>', opt)
+api.nvim_set_keymap('n', '<leader>sf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
+api.nvim_set_keymap('n', '<leader>si', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
+api.nvim_set_keymap('n', '<leader>ssh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
+api.nvim_set_keymap('n', '<leader>srr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
+api.nvim_set_keymap('n', '<leader>srn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
 api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
 
--- Harpoon
-api.nvim_set_keymap('n', '<Leader>h', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', opt)
-api.nvim_set_keymap('n', '<Leader>ha', '<cmd>lua require("harpoon.mark").add_file()<CR>', opt)
-
 -- Git
-api.nvim_set_keymap('n', '<Leader>gs', ':Git<CR>', {noremap = true})
-api.nvim_set_keymap('n', '<Leader>gb', ':Git blame<CR>', {noremap = true})
-api.nvim_set_keymap('n', '<Leader>gd', ':Gvdiff<CR>', {noremap = true})
+api.nvim_set_keymap('n', '<leader>gs', ':Git<CR>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>gb', ':Git blame<CR>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>gd', ':Gvdiff<CR>', { noremap = true })
 
 
 -- search mappings: these will make it so that going to the next one in a
@@ -64,13 +63,13 @@ cmd('nnoremap N Nzzzv')
 cmd('nnoremap ; :')
 
 -- explorer
-api.nvim_set_keymap('n', '<Leader>ne', ':NvimTreeToggle<CR>', opt)
+api.nvim_set_keymap('n', '<leader>ne', ':NvimTreeToggle<CR>', opt)
 
 -- better window movement
-api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})
-api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})
-api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {silent = true})
-api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {silent = true})
+api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { silent = true })
+api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { silent = true })
+api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { silent = true })
+api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { silent = true })
 
 -- better indenting
 api.nvim_set_keymap('v', '<', '<gv', opt)
@@ -84,14 +83,17 @@ api.nvim_set_keymap('i', 'jj', '<ESC>', opt)
 -- Tab switch buffer
 api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', opt)
 api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', opt)
-api.nvim_set_keymap('n', '<Leader>c', ':bd<CR>', opt)
+api.nvim_set_keymap('n', '<leader>c', ':bd<CR>', opt)
 
 -- Better nav for omnicomplete
 cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 
 -- vim-vsnip
-imap("<expr> <C-j>", "vsnip#expandable()  ? '<Plug>(vsnip-expand)' : '<C-j>'", {expr = true, noremap = true})
+imap("<expr> <C-j>", "vsnip#expandable()  ? '<Plug>(vsnip-expand)' : '<C-j>'", { expr = true, noremap = true })
+
+-- centerpad
+api.nvim_set_keymap('n', '<leader>z', "<cmd>lua require'centerpad'.toggle{ leftpad = 60, rightpad = 60 }<cr>", { silent = true, noremap = true })
 
 -- when Telescope fails
-cmd('nnoremap <silent> <leader>f :FZF -m<CR>')
+-- cmd('nnoremap <silent> <leader>f :FZF -m<CR>')
