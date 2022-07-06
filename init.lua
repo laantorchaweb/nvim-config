@@ -9,8 +9,11 @@ require("settings")
 require("mappings")
 
 require("config-tree")
-require("config-cmp")
 require("config-lspkind")
+require("config-lspinstall")
+require("config-lspsaga")
+require("config-luasnip")
+require("config-cmp")
 require("config-comment")
 require("config-floaterm")
 require("config-gitblame")
@@ -20,8 +23,11 @@ require("config-telescope")
 require("config-treesitter")
 require("config-indentline")
 require("config-galaxyline")
-require("config-lspinstall")
-require("config-lspconfig")
-require("config-lspsaga")
 require("config-colorizer")
 require("config-autopairs")
+
+require('zen-mode').setup({
+  plugins = {
+    tmux = { enabled = true }
+  }
+})

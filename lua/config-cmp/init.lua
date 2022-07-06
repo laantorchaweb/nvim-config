@@ -1,10 +1,20 @@
 local cmp = require 'cmp'
+local ls = require "luasnip"
+-- Load snippets
+require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load()
+
+ls.filetype_extend("all", { "_" })
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      require("luasnip").lsp_expand(args.body)
     end,
+  },
+  experimental = {
+    native_menu = false,
+    ghost_text = true
   },
   mapping = {
     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -22,18 +32,28 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = cmp.config.sources({
+    { name = 'luasnip', kind = "  " },
     { name = 'nvim_lsp' },
-    { name = 'vsnip', kind = "  " },
     { name = 'nvim_lua' },
     { name = 'path' },
   }, {
     { name = 'buffer', kind = "  " },
   }),
   formatting = {
-    format = require("lspkind").cmp_format(),
+    format = require("lspkind").cmp_format {
+      with_text = true,
+      menu = {
+        buffer = "[buf]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[api]",
+        path = "[path]",
+        luasnip = "[snip]",
+        gh_issues = "[issues]",
+        tn = "[TabNine]",
+      },
+    },
   },
 })
-
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
@@ -69,3 +89,14 @@ require('lspconfig')['cssls'].setup {
 require('lspconfig')['stylelint_lsp'].setup {
   capabilities = capabilities
 }
+--
+-- nvim-cmp highlight groups.
+-- local Group = require("colorbuddy.group").Group
+-- local g = require("colorbuddy.group").groups
+-- local s = require("colorbuddy.style").styles
+--
+-- Group.new("CmpItemAbbr", g.Comment)
+-- Group.new("CmpItemAbbrDeprecated", g.Error)
+-- Group.new("CmpItemAbbrMatchFuzzy", g.CmpItemAbbr.fg:dark(), nil, s.italic)
+-- Group.new("CmpItemKind", g.Special)
+-- Group.new("CmpItemMenu", g.NonText)

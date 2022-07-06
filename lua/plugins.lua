@@ -27,19 +27,19 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'RishabhRD/popfix'
   use 'RishabhRD/nvim-lsputils'
-  use 'github/copilot.vim'
 
   -- Autocomplete
+  use 'L3MON4D3/LuaSnip'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  use "hrsh7th/cmp-nvim-lua"
+  use "hrsh7th/cmp-nvim-lsp-document-symbol"
+  use "saadparwaiz1/cmp_luasnip"
 
   use 'mattn/emmet-vim'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/vim-vsnip-integ'
   use 'rafamadriz/friendly-snippets'
   use { 'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile' }
 
@@ -86,7 +86,7 @@ return require('packer').startup(function(use)
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'windwp/nvim-autopairs'
   use 'mileszs/ack.vim'
-  use { 'smithbm2316/centerpad.nvim' }
+  use 'folke/zen-mode.nvim'
   use { 'ntpeters/vim-better-whitespace', opt = true }
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true }
   use { 'voldikss/vim-floaterm', opt = true }

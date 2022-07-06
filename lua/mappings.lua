@@ -89,11 +89,5 @@ api.nvim_set_keymap('n', '<leader>c', ':bd<CR>', opt)
 cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 
--- vim-vsnip
-imap("<expr> <C-j>", "vsnip#expandable()  ? '<Plug>(vsnip-expand)' : '<C-j>'", { expr = true, noremap = true })
-
--- centerpad
-api.nvim_set_keymap('n', '<leader>z', "<cmd>lua require'centerpad'.toggle{ leftpad = 60, rightpad = 60 }<cr>", { silent = true, noremap = true })
-
--- when Telescope fails
--- cmd('nnoremap <silent> <leader>f :FZF -m<CR>')
+-- zenmode
+api.nvim_set_keymap('n', '<leader>z', "<cmd>lua require('zen-mode').toggle({ window = { width = .50 } })<cr>", { silent = true, noremap = true })
