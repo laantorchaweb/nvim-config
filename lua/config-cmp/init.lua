@@ -1,10 +1,4 @@
 local cmp = require 'cmp'
-local ls = require "luasnip"
--- Load snippets
-require("luasnip/loaders/from_vscode").lazy_load()
-require("luasnip.loaders.from_snipmate").lazy_load()
-
-ls.filetype_extend("all", { "_" })
 
 cmp.setup({
   snippet = {
@@ -100,3 +94,5 @@ require('lspconfig')['stylelint_lsp'].setup {
 -- Group.new("CmpItemAbbrMatchFuzzy", g.CmpItemAbbr.fg:dark(), nil, s.italic)
 -- Group.new("CmpItemKind", g.Special)
 -- Group.new("CmpItemMenu", g.NonText)
+
+vim.cmd('highlight CmpItemMenu guibg = NONE guifg = #666666')

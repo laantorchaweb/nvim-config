@@ -23,6 +23,8 @@ api.nvim_set_keymap('n', '<leader>v', ':vs<CR>', opt)
 
 -- edit init.lua
 api.nvim_set_keymap('n', '<leader>vi', ':e ~/.config/nvim/init.lua<CR>', opt)
+api.nvim_set_keymap('n', '<leader><leader>x', ':w<cr>:source %<cr>', opt)
+api.nvim_set_keymap('n', '<leader><leader>t', '<Plug>PlenaryTestFile', opt)
 
 -- Telescope
 cmd([[nnoremap <leader>e <cmd>lua require('telescope.builtin').find_files()<cr>]])
@@ -90,4 +92,5 @@ cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 
 -- zenmode
-api.nvim_set_keymap('n', '<leader>z', "<cmd>lua require('zen-mode').toggle({ window = { width = .50 } })<cr>", { silent = true, noremap = true })
+api.nvim_set_keymap('n', '<leader>z', "<cmd>lua require('zen-mode').toggle({ window = { width = .50 } })<cr>",
+  { silent = true, noremap = true })

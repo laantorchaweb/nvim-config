@@ -26,8 +26,10 @@ require("config-galaxyline")
 require("config-colorizer")
 require("config-autopairs")
 
-require('zen-mode').setup({
+require("zen-mode").setup({
   plugins = {
     tmux = { enabled = true }
   }
 })
+
+require("nvim-surround").setup({})

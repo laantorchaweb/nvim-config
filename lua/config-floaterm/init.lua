@@ -1,6 +1,6 @@
 local g = vim.g
 
-g.floaterm_title=''
+g.floaterm_title         = ''
 g.floaterm_keymap_toggle = '<Leader>ft'
 g.floaterm_keymap_next   = '<F2>'
 g.floaterm_keymap_prev   = '<F3>'

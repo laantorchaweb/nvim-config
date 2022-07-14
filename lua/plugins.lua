@@ -78,7 +78,7 @@ return require('packer').startup(function(use)
   use { 'tpope/vim-rhubarb', opt = true }
 
   -- General Plugins
-  use 'tpope/vim-surround'
+  use "kylechui/nvim-surround"
   use 'chaoren/vim-wordmotion'
   use 'tpope/vim-repeat'
   use 'kevinhwang91/nvim-bqf'
@@ -87,9 +87,9 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'mileszs/ack.vim'
   use 'folke/zen-mode.nvim'
+  use 'voldikss/vim-floaterm'
   use { 'ntpeters/vim-better-whitespace', opt = true }
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true }
-  use { 'voldikss/vim-floaterm', opt = true }
   use { 'junegunn/fzf', opt = true }
   use { 'junegunn/fzf.vim', opt = true }
 
