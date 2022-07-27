@@ -18,6 +18,9 @@ return require('packer').startup(function(use)
   -- Packer can manage itself as an optional plugin
   use 'wbthomason/packer.nvim'
 
+  -- local
+  use '~/plugins/smap'
+
   -- LSP
   use 'neovim/nvim-lspconfig'
   use 'tami5/lspsaga.nvim'
@@ -27,6 +30,11 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'RishabhRD/popfix'
   use 'RishabhRD/nvim-lsputils'
+  -- Lua
+  use {
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+  }
 
   -- Autocomplete
   use 'L3MON4D3/LuaSnip'
@@ -41,6 +49,7 @@ return require('packer').startup(function(use)
 
   use 'mattn/emmet-vim'
   use 'rafamadriz/friendly-snippets'
+  use { 'styled-components/vscode-styled-components', run = 'yarn install --frozen-lockfile && yarn compile' }
   use { 'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile' }
 
   -- Treesitter

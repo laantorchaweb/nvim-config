@@ -76,14 +76,18 @@ require('lspconfig')['html'].setup {
   capabilities = capabilities
 }
 
-require('lspconfig')['cssls'].setup {
+require('lspconfig')['cssmodules_ls'].setup {
   capabilities = capabilities
 }
+
+-- require('lspconfig')['cssls'].setup {
+--   capabilities = capabilities
+-- }
 
 require('lspconfig')['stylelint_lsp'].setup {
   capabilities = capabilities
 }
---
+
 -- nvim-cmp highlight groups.
 -- local Group = require("colorbuddy.group").Group
 -- local g = require("colorbuddy.group").groups

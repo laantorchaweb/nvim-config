@@ -33,3 +33,4 @@ require("zen-mode").setup({
 })
 
 require("nvim-surround").setup({})
+require("trouble").setup({})
