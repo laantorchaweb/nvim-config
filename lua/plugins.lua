@@ -97,6 +97,10 @@ return require('packer').startup(function(use)
   use 'mileszs/ack.vim'
   use 'folke/zen-mode.nvim'
   use 'voldikss/vim-floaterm'
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim"
+  }
   use { 'ntpeters/vim-better-whitespace', opt = true }
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true }
   use { 'junegunn/fzf', opt = true }

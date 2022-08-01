@@ -32,5 +32,6 @@ require("zen-mode").setup({
   }
 })
 
+require("todo-comments").setup({})
 require("nvim-surround").setup({})
 require("trouble").setup({})
