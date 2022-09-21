@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'RishabhRD/popfix'
   use 'RishabhRD/nvim-lsputils'
+  use { "catppuccin/nvim", as = "catppuccin" }
   -- Lua
   use {
     'folke/trouble.nvim',
