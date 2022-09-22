@@ -9,7 +9,7 @@ require 'nvim-tree'.setup {
   ignore_ft_on_setup  = { ".git", "node_modules", ".cache" },
   actions             = {
     open_file = {
-      quit_on_open = true,
+      quit_on_open = false,
       resize_window = false,
       window_picker = {
         enable = true,
@@ -25,7 +25,7 @@ require 'nvim-tree'.setup {
   hijack_cursor       = false,
   update_cwd          = false,
   diagnostics         = {
-    enable = false
+    enable = true
   },
   update_focused_file = {
     enable      = false,
@@ -41,8 +41,7 @@ require 'nvim-tree'.setup {
     args = {}
   },
   view                = {
-    width = 25,
-    height = 30,
+    width = 35,
     side = 'left',
     mappings = {
       custom_only = false,
