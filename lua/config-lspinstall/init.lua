@@ -4,13 +4,13 @@ local null_ls = require('null-ls')
 local appearance = require('config-lspinstall/appearance')
 local handlers = require('config-lspinstall/handlers')
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
   appearance.setup()
   vim.cmd [[augroup Format]]
   vim.cmd [[autocmd! * <buffer>]]
-  vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+  vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.format()]]
   vim.cmd [[augroup END]]
 
   handlers.on_attach()

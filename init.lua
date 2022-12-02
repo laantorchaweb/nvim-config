@@ -5,6 +5,7 @@ g.auto_save = 0
 require("plugins")
 require("globals")
 require("utils")
+require("config-catppuccin")
 require("settings")
 require("mappings")
 
@@ -28,7 +29,7 @@ require("config-autopairs")
 
 require("zen-mode").setup({
   plugins = {
-    tmux = { enabled = true }
+    tmux = { enabled = false }
   }
 })
 
