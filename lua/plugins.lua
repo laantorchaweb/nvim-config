@@ -1,7 +1,7 @@
 -- vim.cmd [[packadd packer.nvim]]
-local fn      = vim.fn
-local cmd     = vim.cmd
-local execute = vim.api.nvim_command
+local fn           = vim.fn
+local cmd          = vim.cmd
+local execute      = vim.api.nvim_command
 
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
@@ -18,6 +18,10 @@ return require('packer').startup(function(use)
   -- Packer can manage itself as an optional plugin
   use 'wbthomason/packer.nvim'
 
+  --TEMP
+  use 'slim-template/vim-slim'
+  use 'sudoerwx/vim-ray-so-beautiful'
+
   -- local
   use '~/plugins/smap'
 
@@ -26,7 +30,8 @@ return require('packer').startup(function(use)
   use 'tami5/lspsaga.nvim'
   use 'onsails/lspkind-nvim'
   use 'kosayoda/nvim-lightbulb'
-  use 'williamboman/nvim-lsp-installer'
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'RishabhRD/popfix'
   use 'RishabhRD/nvim-lsputils'
@@ -50,8 +55,10 @@ return require('packer').startup(function(use)
 
   use 'mattn/emmet-vim'
   use 'rafamadriz/friendly-snippets'
-  use { 'styled-components/vscode-styled-components', run = 'yarn install --frozen-lockfile && yarn compile' }
+  -- use { 'styled-components/vscode-styled-components', run = 'yarn install --frozen-lockfile && yarn compile' }
   use { 'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile' }
+  use 'hngocl/vs-code-full'
+  use 'ijsto/emotionsnippets'
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -76,6 +83,7 @@ return require('packer').startup(function(use)
 
   -- Explorer
   use 'kyazdani42/nvim-tree.lua'
+  use 'mbbill/undotree'
 
   -- Color
   use 'christianchiarulli/nvcode-color-schemes.vim'
@@ -110,5 +118,4 @@ return require('packer').startup(function(use)
   -- Tmux
   use 'tmux-plugins/vim-tmux'
   use 'christoomey/vim-tmux-navigator'
-
 end)

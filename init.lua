@@ -11,7 +11,7 @@ require("mappings")
 
 require("config-tree")
 require("config-lspkind")
-require("config-lspinstall")
+require("config-mason")
 require("config-lspsaga")
 require("config-luasnip")
 require("config-cmp")

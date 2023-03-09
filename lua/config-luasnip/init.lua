@@ -1,5 +1,8 @@
 local ls = require "luasnip"
 require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").load {
+  paths = vim.fn.stdpath "config" .. "/snippets",
+}
 
 ls.filetype_extend("all", { "_" })
 
@@ -22,3 +25,4 @@ vim.keymap.set({ "i", "s" }, "<c-j>", function()
     ls.jump(-1)
   end
 end, { silent = true })
+

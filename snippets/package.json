@@ -1,0 +1,19 @@
+{
+  "name": "nvim-snippets",
+  "author": "laantorchaweb",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "lua",
+        "path": "./lua.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./markdown.json"
+      }
+    ]
+  }
+}

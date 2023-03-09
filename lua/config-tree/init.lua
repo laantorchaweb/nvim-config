@@ -5,7 +5,6 @@ vim.o.termguicolors = true
 require 'nvim-tree'.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
-  open_on_setup       = false,
   ignore_ft_on_setup  = { ".git", "node_modules", ".cache" },
   actions             = {
     open_file = {
@@ -34,7 +33,7 @@ require 'nvim-tree'.setup {
   },
   hijack_directories  = {
     enable = true,
-    auto_open = true,
+    auto_open = false,
   },
   system_open         = {
     cmd  = nil,

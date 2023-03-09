@@ -38,6 +38,9 @@ cmd([[nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>]])
 cmd([[nnoremap <leader>ac :Ack!<Space>]])
 cmd([[nnoremap <leader>bb :GitBlameToggle<CR>]])
 
+-- show undotree panel
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+
 -- LSP bindings
 api.nvim_set_keymap('n', 'sd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
 api.nvim_set_keymap('n', 'gT', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
