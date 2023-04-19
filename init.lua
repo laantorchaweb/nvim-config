@@ -36,3 +36,12 @@ require("zen-mode").setup({
 require("todo-comments").setup({})
 require("nvim-surround").setup({})
 require("trouble").setup({})
+
+require('tabnine').setup({
+  disable_auto_comment = true,
+  accept_keymap = "<C-l>",
+  dismiss_keymap = "<C-h>",
+  debounce_ms = 800,
+  suggestion_color = { gui = "#808080", cterm = 244 },
+  exclude_filetypes = { "TelescopePrompt" }
+})

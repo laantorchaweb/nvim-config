@@ -25,11 +25,11 @@ require("mason").setup {
 }
 
 mason.setup {
-  ensure_installed = { "sumneko_lua" },
+  ensure_installed = { "tsserver", "html" },
 }
 
 require("mason-lspconfig").setup_handlers {
-  function (server_name) -- default handler (optional)
+  function(server_name)  -- default handler (optional)
     require("lspconfig")[server_name].setup {
       on_attach = on_attach,
       capabilities = capabilities
@@ -59,4 +59,3 @@ null_ls.setup({
     null_ls.builtins.formatting.eslint_d,
   }
 })
-

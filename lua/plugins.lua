@@ -52,6 +52,7 @@ return require('packer').startup(function(use)
   use "hrsh7th/cmp-nvim-lua"
   use "hrsh7th/cmp-nvim-lsp-document-symbol"
   use "saadparwaiz1/cmp_luasnip"
+  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
 
   use 'mattn/emmet-vim'
   use 'rafamadriz/friendly-snippets'
