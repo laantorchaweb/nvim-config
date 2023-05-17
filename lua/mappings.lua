@@ -66,6 +66,8 @@ cmd('nnoremap N Nzzzv')
 
 -- use ; as :
 cmd('nnoremap ; :')
+cmd('nnoremap ñ :')
+cmd('nnoremap Ñ :')
 
 -- explorer
 api.nvim_set_keymap('n', '<leader>ne', ':NvimTreeToggle<CR>', opt)

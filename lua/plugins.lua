@@ -85,6 +85,7 @@ return require('packer').startup(function(use)
   -- Explorer
   use 'kyazdani42/nvim-tree.lua'
   use 'mbbill/undotree'
+  use 'pbrisbin/vim-mkdir'
 
   -- Color
   use 'christianchiarulli/nvcode-color-schemes.vim'
