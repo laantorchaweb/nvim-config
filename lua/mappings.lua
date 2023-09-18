@@ -53,6 +53,13 @@ api.nvim_set_keymap('n', '<leader>srr', '<cmd>lua vim.lsp.buf.references()<CR>',
 api.nvim_set_keymap('n', '<leader>srn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
 api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
 
+-- nvim-test
+api.nvim_set_keymap('n', '<leader>t', ':TestNearest<cr>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>T', ':TestFile<cr>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>ta', ':TestSuite<cr>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>tl', ':TestLast<cr>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>tg', ':TestVisit<cr>', { noremap = true })
+
 -- Git
 api.nvim_set_keymap('n', '<leader>gs', ':Git<CR>', { noremap = true })
 api.nvim_set_keymap('n', '<leader>gb', ':Git blame<CR>', { noremap = true })

@@ -120,4 +120,32 @@ return require('packer').startup(function(use)
   -- Tmux
   use 'tmux-plugins/vim-tmux'
   use 'christoomey/vim-tmux-navigator'
+
+  --Testing
+  use 'vim-test/vim-test'
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      'marilari88/neotest-vitest',
+      "thenbe/neotest-playwright",
+      "nvim-neotest/neotest-vim-test",
+    },
+    config = function()
+      require("neotest").setup({
+        adapters = {
+          require("neotest-vim-test"),
+          require('neotest-vitest'),
+          require("neotest-playwright").adapter({
+            options = {
+              persist_project_selection = true,
+              enable_dynamic_test_discovery = true,
+            }
+          }),
+        },
+      })
+    end,
+  }
 end)

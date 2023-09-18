@@ -1,17 +1,19 @@
-local g   = vim.g
-local o   = vim.o
-local cmd = vim.cmd
+local g                     = vim.g
+local o                     = vim.o
+local cmd                   = vim.cmd
 
+vim.g['test#strategy']      = "neovim"
+vim.g['test#neovim#term_position'] = 'vert'
 
-g.gitblame_enabled = 1
-g.gitblame_date_format = '%x'
+g.gitblame_enabled          = 1
+g.gitblame_date_format      = '%x'
 g.gitblame_message_template = '<summary> • <author> • <date>'
-g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+g.catppuccin_flavour        = "macchiato" -- latte, frappe, macchiato, mocha
 
-o.ch = 1 --command height
+o.ch                        = 1    --command height
 
-cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
-cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
+cmd('set shortmess+=c')            -- Don't pass messages to |ins-completion-menu|.
+cmd('set whichwrap+=<,>,[,],h,l')  -- move to next line with theses keys
 
 cmd('set ts=2')
 cmd('set sw=2')
