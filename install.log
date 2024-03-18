@@ -1,0 +1,10 @@
+[23:32:20 2023-05-08] FETCHING Version 2.18.0
+[23:32:20 2023-05-08] CREATING /Users/sebastianbaroni/.spicetify
+[23:32:20 2023-05-08] DOWNLOADING https://github.com/spicetify/spicetify-cli/releases/download/v2.18.0/spicetify-2.18.0-darwin-arm64.tar.gz
+[23:32:23 2023-05-08] EXTRACTING /Users/sebastianbaroni/.spicetify/spicetify.tar.gz
+[23:32:23 2023-05-08] SETTING EXECUTABLE PERMISSIONS TO /Users/sebastianbaroni/.spicetify/spicetify
+[23:32:23 2023-05-08] REMOVING /Users/sebastianbaroni/.spicetify/spicetify.tar.gz
+[23:32:23 2023-05-08] APPENDING /Users/sebastianbaroni/.spicetify to PATH in /Users/sebastianbaroni/.zshrc
+[23:32:23 2023-05-08] Restart your shell to have spicetify in your PATH.
+[23:32:23 2023-05-08] spicetify v2.18.0 was installed successfully to /Users/sebastianbaroni/.spicetify
+[23:32:23 2023-05-08] Run 'spicetify --help' to get started

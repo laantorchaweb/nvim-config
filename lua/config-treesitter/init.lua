@@ -12,6 +12,7 @@ ts_config.setup {
     "cpp",
     "rust",
     "lua",
+    "astro",
     "ruby"
   },
   ignore_install = { "haskell" },
@@ -22,12 +23,12 @@ ts_config.setup {
   playground = {
     enable = true,
     disable = {},
-    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+    updatetime = 25,        -- Debounced time for highlighting nodes in the playground from source code
     persist_queries = false -- Whether the query persists across vim sessions
   },
   autotag = { enable = true },
   rainbow = { enable = true, extended_mode = true },
-  context_commentstring = { enable = true, config = { javascriptreact = { style_element = '{/*%s*/}' } } },
+  -- context_commentstring = { enable = true, config = { javascriptreact = { style_element = '{/*%s*/}' } } },
   refactor = {
     highlight_definitions = {
       enable = true,

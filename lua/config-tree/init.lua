@@ -5,7 +5,7 @@ vim.o.termguicolors = true
 require 'nvim-tree'.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
-  ignore_ft_on_setup  = { ".git", "node_modules", ".cache" },
+  -- ignore_ft_on_setup  = { ".git", "node_modules", ".cache" },
   actions             = {
     open_file = {
       quit_on_open = false,
@@ -42,10 +42,10 @@ require 'nvim-tree'.setup {
   view                = {
     width = 35,
     side = 'left',
-    mappings = {
-      custom_only = false,
-      list = {}
-    }
+    -- mappings = {
+    --   custom_only = false,
+    --   list = {}
+    -- }
   },
   renderer            = {
     highlight_git        = true,
