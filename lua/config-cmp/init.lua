@@ -26,7 +26,7 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = cmp.config.sources({
-    { name = 'luasnip', kind = "  " },
+    { name = 'luasnip', kind = " 󰃐 " },
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'path' },

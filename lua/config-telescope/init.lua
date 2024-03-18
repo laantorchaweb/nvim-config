@@ -6,8 +6,8 @@ require('telescope').setup {
     defaults = {
         -- vimgrep_arguments = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
         vimgrep_arguments = {'ag', '--no-group', '--no-color', '--line-number', '--column', '--smart-case'},
-        -- prompt_prefix = "  ",
-        prompt_prefix = "  ",
+        -- prompt_prefix = " 󰍉 ",
+        prompt_prefix = " 󰍉 ",
         selection_caret = " ",
         entry_prefix = "  ",
         initial_mode = "insert",

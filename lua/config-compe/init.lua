@@ -19,16 +19,16 @@ require'compe'.setup {
     documentation = true,
 
     source = {
-        path = {kind = "  "},
+        path = {kind = " 󰇘 "},
         buffer = {kind = "  "},
         calc = {kind = "  "},
-        vsnip = {kind = "  "},
+        vsnip = {kind = " 󰃐 "},
         nvim_lsp = {kind = "  "},
         nvim_lua = true,
         -- spell = {kind = "  "},
         tags = false,
         vim_dadbod_completion = true,
-        emoji = {kind = " ﲃ ", filetypes={"markdown"}}
+        emoji = {kind = " 󰞅 ", filetypes={"markdown"}}
     }
 }
 
@@ -46,16 +46,16 @@ require'compe'.setup {
 -- 
 -- 
 -- 
--- 
--- 
--- ﬘
--- 
--- 
--- 
+-- 󰃀
+-- 󰃃
+-- 󱁥
+-- 󰅫
+-- 󰌆
+-- 󰌵
 -- m
--- 
+-- 󰊕
 -- 
--- 
+-- 󰏗
 -- 
 
 local t = function(str)
