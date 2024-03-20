@@ -24,7 +24,6 @@ api.nvim_set_keymap('n', '<leader>v', ':vs<CR>', opt)
 -- edit init.lua
 api.nvim_set_keymap('n', '<leader>vi', ':e ~/.config/nvim/init.lua<CR>', opt)
 api.nvim_set_keymap('n', '<leader><leader>x', ':w<cr>:source %<cr>', opt)
-api.nvim_set_keymap('n', '<leader><leader>t', '<Plug>PlenaryTestFile', opt)
 
 -- Telescope
 cmd([[nnoremap <leader>e <cmd>lua require('telescope.builtin').find_files()<cr>]])
