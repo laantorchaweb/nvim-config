@@ -22,9 +22,6 @@ return require('packer').startup(function(use)
   use 'slim-template/vim-slim'
   use 'sudoerwx/vim-ray-so-beautiful'
 
-  -- local
-  use '~/plugins/smap'
-
   -- LSP
   use 'neovim/nvim-lspconfig'
   use 'tami5/lspsaga.nvim'
@@ -96,6 +93,12 @@ return require('packer').startup(function(use)
   use 'f-person/git-blame.nvim'
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'tpope/vim-rhubarb', opt = true }
+  use({
+    "kdheepak/lazygit.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  })
 
   -- General Plugins
   use "kylechui/nvim-surround"
@@ -126,6 +129,7 @@ return require('packer').startup(function(use)
   use {
     "nvim-neotest/neotest",
     requires = {
+      "nvim-neotest/nvim-nio",
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",

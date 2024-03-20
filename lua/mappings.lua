@@ -64,6 +64,7 @@ api.nvim_set_keymap('n', '<leader>tg', ':TestVisit<cr>', { noremap = true })
 api.nvim_set_keymap('n', '<leader>gs', ':Git<CR>', { noremap = true })
 api.nvim_set_keymap('n', '<leader>gb', ':Git blame<CR>', { noremap = true })
 api.nvim_set_keymap('n', '<leader>gd', ':Gvdiff<CR>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
 
 
 -- search mappings: these will make it so that going to the next one in a
