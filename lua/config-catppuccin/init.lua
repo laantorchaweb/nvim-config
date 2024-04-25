@@ -1,8 +1,8 @@
 require("catppuccin").setup({
-  flavour = "mocha", -- latte, frappe, macchiato, mocha
-  background = { -- :h background
+  flavour = "macchiato", -- latte, frappe, macchiato, mocha
+  background = {         -- :h background
     light = "latte",
-    dark = "mocha",
+    dark = "macchiato",
   },
   compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
   transparent_background = true,
@@ -23,19 +23,19 @@ require("catppuccin").setup({
     lsp_trouble = true,
     -- harpoon = true,
   },
-  -- native_lsp = {
-  --   enabled = true,
-  --   virtual_text = {
-  --     errors = { "italic" },
-  --     hints = { "italic" },
-  --     warnings = { "italic" },
-  --     information = { "italic" },
-  --   },
-  --   underlines = {
-  --     errors = { "underline" },
-  --     hints = { "underline" },
-  --     warnings = { "underline" },
-  --     information = { "underline" },
-  --   },
-  -- },
+  native_lsp = {
+    enabled = true,
+    virtual_text = {
+      errors = { "italic" },
+      hints = { "italic" },
+      warnings = { "italic" },
+      information = { "italic" },
+    },
+    underlines = {
+      errors = { "underline" },
+      hints = { "underline" },
+      warnings = { "underline" },
+      information = { "underline" },
+    },
+  },
 })
