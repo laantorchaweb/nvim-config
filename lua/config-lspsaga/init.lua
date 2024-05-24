@@ -1,8 +1,8 @@
 local api = vim.api
 
-local saga = require('lspsaga')
-
-saga.init_lsp_saga()
+-- local saga = require('lspsaga')
+--
+-- saga.setup({})
 
 api.nvim_set_keymap('n', 'K', ':Lspsaga hover_doc<CR>', { silent = true, noremap = true })
 api.nvim_set_keymap('n', 'ca', ':Lspsaga code_action<CR>', { silent = true, noremap = true })

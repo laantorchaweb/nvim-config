@@ -24,7 +24,13 @@ return require('packer').startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
-  use 'tami5/lspsaga.nvim'
+  use({
+    'nvimdev/lspsaga.nvim',
+    after = 'nvim-lspconfig',
+    config = function()
+      require('lspsaga').setup({})
+    end,
+  })
   use 'onsails/lspkind-nvim'
   use 'kosayoda/nvim-lightbulb'
   use "williamboman/mason.nvim"
