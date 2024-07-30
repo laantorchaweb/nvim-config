@@ -35,7 +35,9 @@ return require('packer').startup(function(use)
   use 'kosayoda/nvim-lightbulb'
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
-  use 'jose-elias-alvarez/null-ls.nvim'
+  -- use 'jose-elias-alvarez/null-ls.nvim'
+  use 'mfussenegger/nvim-lint'
+  use 'stevearc/conform.nvim'
   use 'RishabhRD/popfix'
   use 'RishabhRD/nvim-lsputils'
   use { "catppuccin/nvim", as = "catppuccin" }

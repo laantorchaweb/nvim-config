@@ -26,6 +26,8 @@ require("config-indentline")
 require("config-galaxyline")
 require("config-colorizer")
 require("config-autopairs")
+require("config-conform")
+require("config-nvimlint")
 
 require("zen-mode").setup({
   plugins = {

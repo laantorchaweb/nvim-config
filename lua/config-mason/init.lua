@@ -1,5 +1,5 @@
 local mason = require('mason-lspconfig')
-local null_ls = require('null-ls')
+-- local null_ls = require('null-ls')
 local lspconfig = require('lspconfig')
 local appearance = require('config-lspinstall/appearance')
 local handlers = require('config-lspinstall/handlers')
@@ -51,11 +51,11 @@ require("mason-lspconfig").setup_handlers {
   end
 }
 
-null_ls.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  sources = {
-    null_ls.builtins.formatting.prettierd,
-    null_ls.builtins.formatting.eslint_d,
-  }
-})
+-- null_ls.setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   sources = {
+--     null_ls.builtins.formatting.prettierd,
+--     null_ls.builtins.formatting.eslint_d,
+--   }
+-- })
