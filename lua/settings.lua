@@ -4,6 +4,10 @@ local cmd                          = vim.cmd
 
 vim.g['test#strategy']             = "neovim"
 vim.g['test#neovim#term_position'] = 'vert'
+g.gitblame_enabled                 = 1
+g.gitblame_date_format             = '%x'
+g.gitblame_message_template        = '<summary> • <author> • <date>'
+g.catppuccin_flavour               = "macchiato" -- latte, frappe, macchiato, mocha
 
 g.gitblame_enabled                 = 1
 g.gitblame_date_format             = '%x'
