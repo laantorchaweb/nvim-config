@@ -15,8 +15,8 @@ api.nvim_set_keymap('n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scro
 api.nvim_set_keymap('n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>",
   { silent = true, noremap = true })
 
-api.nvim_set_keymap('n', 'cd', "<cmd>lua require('lspsaga.provider').preview_definition()<CR>",
-  { silent = true, noremap = true })
+api.nvim_set_keymap('n', 'cd', "<cmd>Lspsaga peek_definition<CR>", { silent = true, noremap = true })
+api.nvim_set_keymap('n', 'T', "<cmd>Lspsaga peek_type_definition<CR>", { silent = true, noremap = true })
 -- show
-api.nvim_set_keymap('n', '<Leader>cd', "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>",
+api.nvim_set_keymap('n', '<Leader>cd', "<cmd>Lspsaga show_line_diagnostics<CR>",
   { silent = true })
