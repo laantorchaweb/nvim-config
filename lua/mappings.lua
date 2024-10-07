@@ -108,7 +108,7 @@ api.nvim_set_keymap('n', '<leader>z', "<cmd>lua require('zen-mode').toggle({ win
   { silent = true, noremap = true })
 
 -- trouble
-vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>",
+vim.api.nvim_set_keymap("n", "<leader>xt", "<cmd>Trouble<cr>",
   { silent = true, noremap = true }
 )
 vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>",
@@ -131,6 +131,6 @@ vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>",
 vim.api.nvim_set_keymap("n", "tT", "<cmd>TodoTrouble<cr>",
   { silent = true, noremap = true }
 )
-vim.api.nvim_set_keymap("n", "tt", "<cmd>TodoTelescope<cr>",
+vim.api.nvim_set_keymap("n", "xx", "<cmd>TodoTelescope<cr>",
   { silent = true, noremap = true }
 )
