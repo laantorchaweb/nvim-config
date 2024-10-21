@@ -131,6 +131,6 @@ vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>",
 vim.api.nvim_set_keymap("n", "tT", "<cmd>TodoTrouble<cr>",
   { silent = true, noremap = true }
 )
-vim.api.nvim_set_keymap("n", "xx", "<cmd>TodoTelescope<cr>",
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>TodoTelescope<cr>",
   { silent = true, noremap = true }
 )
